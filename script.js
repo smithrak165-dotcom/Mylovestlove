@@ -15,7 +15,7 @@ function validateConfig() {
     const isValidHex = (hex) => /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(hex);
     Object.entries(config.colors).forEach(([key, value]) => {
         if (!isValidHex(value)) {
-            warnings.push(`Invalid color for ${key}! Using default.`);
+            warnings.push(`Invalid color for ${key}! Using default.`);  
             config.colors[key] = getDefaultColor(key);
         }
     });
@@ -80,8 +80,6 @@ window.addEventListener('DOMContentLoaded', () => {
     // Create initial floating elements
     createFloatingElements();
 
-    // Setup music player
-    setupMusicPlayer();
 });
 
 // Create floating hearts and bears
